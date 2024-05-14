@@ -1,0 +1,22 @@
+<div class="task-card" [ngClass]="{ 'pending': task.status === 'pending', 'in-progress': task.status === 'in_progress', 'completed': task.status === 'completed' }">
+  <button class="delete" (click)="deleteTask(task.id)">
+    <i class="fa fa-trash"></i>
+  </button>
+  <h3>{{ task.title }}</h3>
+  <p>{{ task.description }}</p>
+  <div class="task-buttons">
+    <label>
+      <input [name]="task.id" type="radio" [value]="'pending'" [checked]="task.status === 'pending'" (change)="updateStatus($event)">
+      Pending
+    </label>
+    <label>
+      <input [name]="task.id" type="radio" [value]="'in_progress'" [checked]="task.status === 'in_progress'" (change)="updateStatus($event)">
+      In Progress
+    </label>
+    <label>
+      <input [name]="task.id" type="radio" [value]="'completed'" [checked]="task.status === 'completed'" (change)="updateStatus($event)">
+      Completed
+    </label>
+  </div>
+</div>
+

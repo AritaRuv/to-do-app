@@ -1,0 +1,80 @@
+.task-form {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto; 
+  max-width: 400px;
+  margin-top: 70px; 
+}
+
+.task-form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form select {
+  width: calc(100% - 20px); 
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-form select {
+  width: 100% ; 
+  margin-bottom: 30px;
+
+}
+
+.task-form textarea {
+  resize: vertical;
+}
+
+.task-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.task-form button:hover {
+  background-color: #0056b3;
+}
+
+.warning-text{
+  color: red;
+  font-size:x-small;
+  margin-bottom: 20px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  .task-form {
+    padding: 15px;
+    max-width: 300px; 
+  }
+
+  .task-form label {
+    font-size: 14px;
+  }
+
+  .task-form input[type="text"],
+  .task-form textarea,
+  .task-form select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .task-form button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,7 @@
+<div class="task-container">
+  @for ( task of taskList; track task.id) {
+    <task-card [task]="task"></task-card>
+  } @empty {
+    <p>No tasks</p>
+  }
+</div>

@@ -1,0 +1,52 @@
+<form class="task-form" [formGroup]="taskForm" (ngSubmit)="onSubmit()" novalidate >
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" formControlName="title">
+    @if (taskForm.get('title')?.hasError('required')  && taskForm.get('title')?.touched ){
+      <div class="warning-text">
+        <span >Title is required</span>
+      </div>
+    }
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" formControlName="description"></textarea>
+    @if (taskForm.get('description')?.hasError('required') && taskForm.get('description')?.touched ){
+      <div class="warning-text">
+        <span>
+          Description is required</span>
+      </div>
+    }
+  </div>
+  <button type="submit">Create Task</button>
+</form>
+
+<!-- <form class="task-form" novalidate #newTaskForm="ngForm">
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" #title="ngModel" [(ngModel)]="formData.title" minlength="3" required>
+    <div class="warning-text" *ngIf="title.invalid && (title.touched || title.dirty) || isFormSubmited">
+      <span *ngIf="title.errors?.['required']">Title is required</span>
+      <span *ngIf="title.errors?.['minlength']">Minimum 3 characters</span>
+    </div>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" #description="ngModel" [(ngModel)]="formData.description" minlength="10" required></textarea>
+    <div class="warning-text" *ngIf="description.invalid && (description.touched || description.dirty) || isFormSubmited">
+      <span *ngIf="description.errors?.['required']">Description is required</span>
+      <span *ngIf="description.errors?.['minlength']">Minimum 10 characters</span>
+    </div>
+  </div>
+  <div>
+    <label for="status">Status</label>
+    <select id="status" name="status" [(ngModel)]="formData.status">
+      <option value="pending">Pending</option>
+      <option value="in-progress">In progress</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+  {{isFormSubmited}}
+  <button type="submit" (click)="onSubmit(newTaskForm)">Create Task</button>
+</form> -->
+
